@@ -22,15 +22,20 @@ export default function Render({ attributes }) {
 						</button>
 					</div>
 					<div className="content">
-						{link && <img src={link} alt="" />}
+						{link && (
+							<div className="img">
+								<img src={link} alt="" />
+							</div>
+						)}
 
 						{children.map((child) => (
 							<div className="child">
-								<div className="img">
-									{child.link && (
+								{child.link && (
+									<div className="img">
 										<img src={child.link} alt="" />
-									)}
-								</div>
+									</div>
+								)}
+
 								<p>{child.text}</p>
 							</div>
 						))}
